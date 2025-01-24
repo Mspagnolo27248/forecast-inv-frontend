@@ -30,9 +30,9 @@ interface MetadataRow {
   Value: string | number;
 }
 
-const formatDateToString = (timestamp: number) => {
-  return new Date(timestamp).toLocaleDateString();
-};
+// const formatDateToString = (timestamp: number) => {
+//   return new Date(timestamp).toLocaleDateString();
+// };
 
 const convertProductDateKeysToRows = (data: ProductDateKeys) => {
   const rows: any[] = [];
@@ -187,9 +187,9 @@ export const ModelEditor: React.FC = () => {
   const metadataRows = metadata ? [
     { id: 1, Field: 'Model Name', Value: metadata.modelName },
     { id: 2, Field: 'ID Description', Value: metadata.id_description },
-    { id: 3, Field: 'Created Date', Value: formatDateToString(metadata.createdDate) },
-    { id: 4, Field: 'Last Updated', Value: formatDateToString(metadata.lastUpdated) },
-    { id: 5, Field: 'Start Date', Value: formatDateToString(metadata.startDate) },
+    { id: 3, Field: 'Created Date', Value: metadata.createdDate },
+    { id: 4, Field: 'Last Updated', Value: metadata.lastUpdated },
+    { id: 5, Field: 'Start Date', Value: metadata.startDate },
     { id: 6, Field: 'Run Days', Value: metadata.runDays },
     { id: 7, Field: 'UID', Value: metadata.uid }
   ] : [];
